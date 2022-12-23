@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>UAS PAM</title>
+</head>
+
+<body>
+	<h1>Data Mahasiswa Perwalian</h1>
+	<p><button onclick="sortTable()">Sort</button></p>
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Berdasarkan Nama..">
+	<table id="datamahasiswa">
+		<thead>
+			<tr>
+				<th data-sort="name">Name</th>
+				
+				<th data-sort="nim">NIM</th>
+				<th data-sort="studi">Program Studi</th>
+				<th data-sort="semester">Semester</th>
+				<th data-sort="ip">Indeks Prestasi</th>
+				<th>Aksi</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td colspan="4"><i>Loading...</i></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script src="./service.js"></script>
+</html>

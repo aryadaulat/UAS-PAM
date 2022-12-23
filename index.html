@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>UAS PAM</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,8 +16,7 @@
 	<table id="datamahasiswa">
 		<thead>
 			<tr>
-				<th data-sort="name">Name</th>
-				
+				<th data-sort="name">Name</th>		
 				<th data-sort="nim">NIM</th>
 				<th data-sort="studi">Program Studi</th>
 				<th data-sort="semester">Semester</th>
@@ -30,6 +30,35 @@
 			</tr>
 		</tbody>
 	</table>
+
+	<h2>Input Data</h2>
+	<div>
+		<section class="input_section">
+			<form id="inputBook" >
+				<div class="input">
+					<label for="inputnama">Nama</label>
+					<input id="inputnama" type="text" required>
+				</div>
+				<div class="input">
+					<label for="inputnim">NIM</label>
+					<input id="inputnim" type="text" required>
+				</div>
+				<div class="input">
+					<label for="inputprodi">Program Studi</label>
+					<input id="inputprodi" type="text" required>
+				</div>
+				<div class="input">
+					<label for="inputsemester">Semester</label>
+					<input id="inputsemester" type="number" required>
+				</div>
+				<div class="input">
+					<label for="inputIP">Indeks Prestasi</label>
+					<input id="inputIP" type="text" required>
+				</div>
+				<button id="bookSubmit" type="submit">Masukkan Data</span></button>
+			</form>
+		</section>
+	</div>
 </body>
 <script src="./service.js"></script>
 </html>

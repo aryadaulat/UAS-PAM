@@ -1,0 +1,77 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid #ddd;
+	align-items: center;
+	justify-content:center;
+}
+/* td {
+	display: flex;
+	align-items: center;
+	justify-content:center;
+} */
+input, button {
+	font-size: 16px;
+}
+.input_section {
+	display: flex;
+	flex-direction: column;
+	padding: 16px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+.input_section > h2 {
+	text-align: center;
+	color: cornflowerblue;
+}
+
+.input_section > form > .input {
+	margin: 8px 0;
+}
+
+.input_section > form > button {
+	background-color: cornflowerblue;
+	color: white;
+	border: 0;
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	padding: 8px;
+	cursor: pointer;
+}
+
+.input_section > form > button > span {
+	font-weight: bold;
+}
+
+.input_section > form > .input > input {
+	display: block;
+	width: 100%;
+	padding: 8px;
+	border-radius: 5px;
+}
+
+
+.input_section > form > .input > label {
+	color: cornflowerblue;
+	font-weight: bold;
+}
+
+.input_section > form > .input_inline {
+	margin: 12px 0;
+	display: flex;
+	align-items: center;
+}
+
+.input_section > form > .input_inline > label {
+	color: cornflowerblue;
+	font-weight: bold;
+	margin-right: 10px;
+}

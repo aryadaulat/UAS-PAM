@@ -1,93 +1,103 @@
 document.addEventListener("DOMContentLoaded", init, false);
-
+let data = [
+	{	
+		id:1,
+		Nama: "Arya Daulat",
+		NIM: "118140128",
+		ProgramStudi: "Teknik Informatika",
+		ProgramPendidikan: "S1",
+		Semester: 9,
+		Status: true,
+	},
+	{
+		id:2,
+		Nama: "Manarul Hidayat",
+		NIM: "118140128",
+		ProgramStudi: "Teknik Informatika",
+		ProgramPendidikan: "S1",
+		Semester: 8,
+		Status: true,
+	},
+	{
+		id:3,
+		Nama: "Arre Pangestu",
+		NIM: "118140128",
+		ProgramStudi: "Teknik Informatika",
+		ProgramPendidikan: "S1",
+		Semester: 7,
+		Status: true,
+	},
+	{
+		id:4,
+		Nama: "Arya Daulat",
+		NIM: "118140128",
+		ProgramStudi: "Teknik Informatika",
+		ProgramPendidikan: "S1",
+		Semester: 6,
+		Status: true,
+	},
+	{
+		id:5,
+		Nama: "Arya Daulat",
+		NIM: "118140128",
+		ProgramStudi: "Teknik Informatika",
+		ProgramPendidikan: "S1",
+		Semester: 5,
+		Status: true,
+	},
+	{
+		id:6,
+		Nama: "Arya Daulat",
+		NIM: "118140128",
+		ProgramStudi: "Teknik Informatika",
+		ProgramPendidikan: "S1",
+		Semester: 4,
+		Status: true,
+	},
+	{
+		id:7,
+		Nama: "Arya Daulat",
+		NIM: "118140128",
+		ProgramStudi: "Teknik Informatika",
+		ProgramPendidikan: "S1",
+		Semester: 3,
+		Status: true,
+	},
+	{
+		id:8,
+		Nama: "Arya Daulat",
+		NIM: "118140128",
+		ProgramStudi: "Teknik Informatika",
+		ProgramPendidikan: "S1",
+		Semester: 2,
+		Status: true,
+	},
+	{
+		id:9,
+		Nama: "Arya Daulat",
+		NIM: "118140128",
+		ProgramStudi: "Teknik Informatika",
+		ProgramPendidikan: "S1",
+		Semester: 1,
+		Status: true,
+	},
+	{
+		id:10,
+		Nama: "Arya Daulat",
+		NIM: "118140128",
+		ProgramStudi: "Teknik Informatika",
+		ProgramPendidikan: "S1",
+		Semester: 0,
+		Status: true,
+	},
+];
 async function init() {
   // Select the table (well, tbody)
   let table = document.querySelector("#datamahasiswa tbody");
   // get the cats
   // let resp = await fetch('https://www.raymondcamden.com/.netlify/functions/get-cats');
   // let data = await resp.json();
-  let data = [
-    {
-      Nama: "Arya Daulat",
-      NIM: "118140128",
-      ProgramStudi: "Teknik Informatika",
-      ProgramPendidikan: "S1",
-      Semester: 9,
-      Status: true,
-    },
-		{
-      Nama: "Manarul Hidayat",
-      NIM: "118140128",
-      ProgramStudi: "Teknik Informatika",
-      ProgramPendidikan: "S1",
-      Semester: 8,
-      Status: true,
-    },
-		{
-      Nama: "Arre Pangestu",
-      NIM: "118140128",
-      ProgramStudi: "Teknik Informatika",
-      ProgramPendidikan: "S1",
-      Semester: 7,
-      Status: true,
-    },
-		{
-      Nama: "Arya Daulat",
-      NIM: "118140128",
-      ProgramStudi: "Teknik Informatika",
-      ProgramPendidikan: "S1",
-      Semester: 6,
-      Status: true,
-    },
-		{
-      Nama: "Arya Daulat",
-      NIM: "118140128",
-      ProgramStudi: "Teknik Informatika",
-      ProgramPendidikan: "S1",
-      Semester: 5,
-      Status: true,
-    },
-		{
-      Nama: "Arya Daulat",
-      NIM: "118140128",
-      ProgramStudi: "Teknik Informatika",
-      ProgramPendidikan: "S1",
-      Semester: 4,
-      Status: true,
-    },
-		{
-      Nama: "Arya Daulat",
-      NIM: "118140128",
-      ProgramStudi: "Teknik Informatika",
-      ProgramPendidikan: "S1",
-      Semester: 3,
-      Status: true,
-    },
-		{
-      Nama: "Arya Daulat",
-      NIM: "118140128",
-      ProgramStudi: "Teknik Informatika",
-      ProgramPendidikan: "S1",
-      Semester: 2,
-      Status: true,
-    },
-		{
-      Nama: "Arya Daulat",
-      NIM: "118140128",
-      ProgramStudi: "Teknik Informatika",
-      ProgramPendidikan: "S1",
-      Semester: 1,
-      Status: true,
-    },
-		{
-      Nama: "Arya Daulat",
-      NIM: "118140128",
-      ProgramStudi: "Teknik Informatika",
-      ProgramPendidikan: "S1",
-      Semester: 0,
-      Status: true,
-    },
-  ];
+  
   // create html
   let result = "";
   data.forEach((c) => {
@@ -97,7 +107,7 @@ async function init() {
      <td>${c.ProgramStudi}</td>
      <td>${c.ProgramPendidikan}</td>
 		 <td>${c.Semester}</td>
-		 <td>Detail</td>
+		 <td><button onclick="detaildata('${c.id}')">Detail</button></td>
      </tr>`;
   });
   table.innerHTML = result;
@@ -156,5 +166,27 @@ function myFunction() {
         tr[i].style.display = "none";
       }
     }
+  }
+}
+
+const detaildata=(id) =>{
+  let cfm = confirm("Lihat Detail Buku ?");
+
+  if (cfm == true) {
+    // const data = data.filter((a) => a.id == id);
+    // const data = data.filter((a) => a.id != id);
+		data.filter((a) => a.id == id);
+    // localStorage.setItem(storageKey, JSON.stringify(bookData));
+// 		var xhr = new XMLHttpRequest();
+// 			xhr.open("POST", "/detail.html", true);
+// 			xhr.setRequestHeader('Content-Type', 'application/json');
+// 			xhr.send(JSON.stringify({
+//     			title: bookDataDetail[0].title
+// }));	
+		const url = `detail.html?id=${id}`; 	
+		window.location.href = url;
+    // alert(`[Buku ${bookDataDetail[0].title}] telah terhapus dari rak`);
+  } else {
+    return 0;
   }
 }
